@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Menu from "./Menu";
-
+import UserLinks from "./UserLinks";
 const NavBar = () => {
   const user = false;
   return (
@@ -30,8 +30,8 @@ const NavBar = () => {
           <Image src="/phone.png" alt="" width={20} height={20} />
           <span> +8801858557886</span>
         </div>
-        {/* <UserLinks/>
-        <CartIcon /> */}
+        <UserLinks/>
+        <CartIcon />
       </div>
     </div>
   );
