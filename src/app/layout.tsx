@@ -5,7 +5,7 @@ import Featured from '@/components/Featured';
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
-
+import toast, { Toaster } from 'react-hot-toast';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -28,9 +28,9 @@ export default function RootLayout({
             <NavBar />
             {children}
             <Footer />
-
+           
           </div>
-
+          <Toaster  />
         </AuthProvider>
 
 

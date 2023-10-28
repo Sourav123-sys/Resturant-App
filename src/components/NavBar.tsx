@@ -3,9 +3,10 @@ import React from "react";
 import Link from "next/link";
 
 import Image from "next/image";
-
+import CartIcon from "./CartIcon";
 import Menu from "./Menu";
 import UserLinks from "./UserLinks";
+
 const NavBar = () => {
   const user = false;
   return (

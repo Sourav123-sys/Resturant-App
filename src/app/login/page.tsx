@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const { status } = useSession();
@@ -13,7 +14,8 @@ const LoginPage = () => {
     return <p>Loading...</p>;
   }
   if (status === "authenticated") {
-    router.push("/")
+      router.push("/")
+      toast.success('Successfully Login')
   }
 
   return (
