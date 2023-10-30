@@ -30,7 +30,7 @@ export default function RootLayout({
               <NavBar />
               {children}
               <Footer />
-              <Toaster />
+              <Toaster  />
             </div>
 
           </QueryProvider>

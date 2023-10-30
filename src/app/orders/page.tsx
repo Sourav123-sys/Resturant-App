@@ -15,6 +15,7 @@ const OrdersPage = () => {
 
   if (status === "unauthenticated") {
     router.push("/");
+    toast.error("Login First")
   }
 
   const { isLoading, error, data } = useQuery({
@@ -47,7 +48,7 @@ const OrdersPage = () => {
     const status = input.value;
 
     mutation.mutate({ id, status });
-    toast.success("The order status has been changed!")
+    toast.success("The order status has been changed successfully")
   };
 
   if (isLoading || status === "loading") return "Loading...";
