@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
+import QueryProvider from "@/components/QueryProvider";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -23,14 +24,16 @@ export default function RootLayout({
       <body className={inter.className}>
 
         <AuthProvider>
-          <div>
+          <QueryProvider>
+            <div>
 
-            <NavBar />
-            {children}
-            <Footer />
-           
-          </div>
-          <Toaster  />
+              <NavBar />
+              {children}
+              <Footer />
+              <Toaster />
+            </div>
+
+          </QueryProvider>
         </AuthProvider>
 
 
