@@ -3,6 +3,7 @@
 import { ProductType } from "@/types/types";
 import { useCartStore } from "@/utilies/store";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 
 const Price = ({ product }: { product: ProductType }) => {
@@ -40,7 +41,7 @@ const Price = ({ product }: { product: ProductType }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-2xl font-bold">${total}</h2>
+      <h2 className="text-2xl font-bold text-[#00DCDC]">{total}/-</h2>
       {/* OPTIONS CONTAINER */}
       <div className="flex gap-4">
         {product.options?.length &&
@@ -49,8 +50,8 @@ const Price = ({ product }: { product: ProductType }) => {
               key={option.title}
               className="min-w-[6rem] p-2 ring-1 ring-teal-400 rounded-md"
               style={{
-                background: selected === index ? "rgb(248 113 113)" : "white",
-                color: selected === index ? "white" : "red",
+                background: selected === index ? "#00DCDC" : "white",
+                color: selected === index ? "white" : "#00DCDC",
               }}
               onClick={() => setSelected(index)}
             >
@@ -62,16 +63,16 @@ const Price = ({ product }: { product: ProductType }) => {
       <div className="flex justify-between items-center">
         {/* QUANTITY */}
         <div className="flex justify-between w-full p-3 ring-1 ring-teal-500">
-          <span>Quantity</span>
+          <span className="text-[#00DCDC]">Quantity</span>
           <div className="flex gap-4 items-center">
             <button
-              onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
+            className="text-[#00DCDC]"  onClick={() => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))}
             >
               {"<"}
             </button>
-            <span>{quantity}</span>
+            <span className="text-[#00DCDC]">{quantity}</span>
             <button
-              onClick={() => setQuantity((prev) => (prev < 9 ? prev + 1 : 9))}
+            className="text-[#00DCDC]"  onClick={() => setQuantity((prev) => (prev < 9 ? prev + 1 : 9))}
             >
               {">"}
             </button>

@@ -24,7 +24,7 @@ const DeleteButton = ({ id }: { id: string }) => {
     });
 
     if (res.status === 200) {
-      router.push("/menu");
+      router.push("/Menu");
       toast("The product has been deleted!");
     } else {
       const data = await res.json();
@@ -34,7 +34,7 @@ const DeleteButton = ({ id }: { id: string }) => {
 
   return (
     <button
-      className="bg-red-400 hover:bg-red-500 text-white p-2 rounded-full ml-6"
+      className="bg-teal-400 hover:bg-teal-600 text-white p-2 rounded-full ml-6"
       onClick={handleDelete}
     >
       <Image src="/delete.png" alt="" width={20} height={20} />
